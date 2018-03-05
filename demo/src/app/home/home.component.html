@@ -54,6 +54,15 @@
           </div>
 
           <div class="form-group">
+            <label for="name">useSize:</label>
+            <input [checked]="useSize"
+                   (change)="useSize = !useSize; changeData()"
+                   type="checkbox"
+                   class="form-control"
+                   id="useSize">
+          </div>
+
+          <div class="form-group">
             <label for="background">Background color:</label>
             <input (input)="background = $event.target.value"
                    (change)="changeData()"
@@ -89,6 +98,7 @@
                   [email]="email"
                   [name]="name"
                   [size]="size"
+                  [useSize]="useSize"
                   [background]="background"
                   [displayType]="displayType"
                   [letter]="letter"></avatar>

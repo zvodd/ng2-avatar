@@ -10,6 +10,7 @@ export class HomeComponent implements OnInit {
   public email: string = null;
   public name: string = null;
   public size: number = 100;
+  public useSize: boolean = true;
   public background: string = '#cf2c4b';
   public displayType: string = null;
   public letter: string = '?';

@@ -35,6 +35,12 @@ export class AvatarComponent implements OnInit, OnChanges {
   @Input('size') size = 100;
 
   /**
+   * The display size
+   * @type {boolean}
+   */
+  @Input('useSize') useSize = true;
+
+  /**
    * Value to set a fixed color via HEX code
    * @type {string}
    */
@@ -114,10 +120,10 @@ export class AvatarComponent implements OnInit, OnChanges {
   setCssProps() {
     this.fontSize = (39 * this.size) / 100;
     this.props = {
-      size: `${this.size}px`,
-      lineheight: `${this.size}px`,
+      size: this.useSize ? `${this.size}px` : ``,
+      lineheight: this.useSize ? `${this.size}px` : ``,
       background: this.background,
-      fontSize: `${this.fontSize}px`
+      fontSize: this.useSize ? `${this.fontSize}px` : ``
     };
 
     switch (this.displayType) {
